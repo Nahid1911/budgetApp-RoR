@@ -22,6 +22,7 @@ class TranGroupsController < ApplicationController
   # POST /tran_groups or /tran_groups.json
   def create
     @tran_group = TranGroup.new(tran_group_params)
+    @tran_group.user = current_user
 
     respond_to do |format|
       if @tran_group.save
