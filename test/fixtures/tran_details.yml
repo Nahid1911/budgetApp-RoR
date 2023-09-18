@@ -3,11 +3,9 @@
 one:
   itemDetails: MyString
   user: one
-  tranGroup: one
   amount: 1.5
 
 two:
   itemDetails: MyString
   user: two
-  tranGroup: two
   amount: 1.5

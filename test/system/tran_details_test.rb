@@ -16,7 +16,6 @@ class TranDetailsTest < ApplicationSystemTestCase
 
     fill_in "Amount", with: @tran_detail.amount
     fill_in "Itemdetails", with: @tran_detail.itemDetails
-    fill_in "Trangroup", with: @tran_detail.tranGroup_id
     fill_in "User", with: @tran_detail.user_id
     click_on "Create Tran detail"
 
@@ -30,7 +29,6 @@ class TranDetailsTest < ApplicationSystemTestCase
 
     fill_in "Amount", with: @tran_detail.amount
     fill_in "Itemdetails", with: @tran_detail.itemDetails
-    fill_in "Trangroup", with: @tran_detail.tranGroup_id
     fill_in "User", with: @tran_detail.user_id
     click_on "Update Tran detail"
 

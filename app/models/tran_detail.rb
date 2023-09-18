@@ -1,4 +1,4 @@
 class TranDetail < ApplicationRecord
   belongs_to :user
-  belongs_to :tranGroup
+  belongs_to :tran_groups
 end

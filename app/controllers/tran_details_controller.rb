@@ -65,6 +65,6 @@ class TranDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tran_detail_params
-      params.require(:tran_detail).permit(:itemDetails, :user_id, :tranGroup_id, :amount)
+      params.require(:tran_detail).permit(:itemDetails, :user_id, :amount)
     end
 end

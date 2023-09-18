@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :tran_groups
   resources :tran_details
+  resources :tran_groups
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

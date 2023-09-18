@@ -17,7 +17,7 @@ class TranDetailsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tran_detail" do
     assert_difference("TranDetail.count") do
-      post tran_details_url, params: { tran_detail: { amount: @tran_detail.amount, itemDetails: @tran_detail.itemDetails, tranGroup_id: @tran_detail.tranGroup_id, user_id: @tran_detail.user_id } }
+      post tran_details_url, params: { tran_detail: { amount: @tran_detail.amount, itemDetails: @tran_detail.itemDetails, user_id: @tran_detail.user_id } }
     end
 
     assert_redirected_to tran_detail_url(TranDetail.last)
@@ -34,7 +34,7 @@ class TranDetailsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tran_detail" do
-    patch tran_detail_url(@tran_detail), params: { tran_detail: { amount: @tran_detail.amount, itemDetails: @tran_detail.itemDetails, tranGroup_id: @tran_detail.tranGroup_id, user_id: @tran_detail.user_id } }
+    patch tran_detail_url(@tran_detail), params: { tran_detail: { amount: @tran_detail.amount, itemDetails: @tran_detail.itemDetails, user_id: @tran_detail.user_id } }
     assert_redirected_to tran_detail_url(@tran_detail)
   end
 
