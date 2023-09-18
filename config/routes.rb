@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tran_details
   resources :tran_groups
   resources :users
