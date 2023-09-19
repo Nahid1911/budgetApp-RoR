@@ -2,10 +2,16 @@ class TranDetailsController < ApplicationController
   before_action :set_tran_detail, only: %i[ show edit update destroy ]
 
   # GET /tran_details or /tran_details.json
-  def index
-    @tran_details = TranDetail.all
-    @tran_summary = TranDetail.all
-  end
+    def index
+      if params[:tran_group_id]
+        filtered_tran_details = TranDetail.where(author_id: current_user, tran_groups_id: params[:tran_group_id])
+        @total_value = TranDetail.where(author_id: current_user, tran_groups_id: params[:tran_group_id]).sum(:amount)
+        @tran_details = filtered_tran_details.to_a
+      elsif params[:user_id]
+        @user = User.find(params[:user_id])
+        @tran_details = @user.tran_details
+      end
+    end
 
   # GET /tran_details/1 or /tran_details/1.json
   def show
@@ -14,7 +20,9 @@ class TranDetailsController < ApplicationController
   # GET /tran_details/new
   def new
     @tran_detail = TranDetail.new
-    @available_groups = TranGroup.all
+    @available_groups = TranGroup.where(user_id: current_user)
+    @tran_group = TranGroup.find(params[:tran_group_id]) # Load the parent TranGroup
+    @tran_detail = @tran_group.tran_details.build
   end
 
   # GET /tran_details/1/edit
@@ -25,11 +33,10 @@ class TranDetailsController < ApplicationController
   def create
     @tran_detail = TranDetail.new(tran_detail_params)
     @tran_detail.author = current_user
-    @available_groups = TranGroup.all
 
     respond_to do |format|
       if @tran_detail.save
-        format.html { redirect_to tran_details_path(@tran_detail), notice: "Tran detail was successfully created." }
+        format.html { redirect_to tran_group_tran_details_path(params[:tran_group_id]), notice: "Tran detail was successfully created." }
         format.json { render :show, status: :created, location: @tran_detail }
       else
         format.html { render :new, status: :unprocessable_entity }

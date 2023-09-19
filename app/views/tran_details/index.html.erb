@@ -1,18 +1,19 @@
-<p style="color: green"><%= notice %></p>
-<h1>TRANSACTION SUMMARY</h1>
+<p style="color: green"></p>
+<h1>GROUP SUMMARY</h1>
+<h4 style="color:skyblue">Group Total : <%= @total_value %></h4>
 <div id="tran_details">
   <table class="table table-hover">
     <thead>
       <tr>
-        <th scope="col">S.L</th>
+        <th scope="col">Date</th>
         <th scope="col">Transection Details</th>
         <th scope="col">Amount</th>
       </tr>
     </thead>
     <tbody>
-      <% @tran_summary.each do |tran|%>
+      <% @tran_details.each do |tran|%>
         <tr>
-          <td scope="row"><%= tran.id %></td>
+          <td scope="row"><%= 0 %></td>
           <td scope="row"><%= tran.itemDetails %></td>
           <td scope="row"><%= tran.amount %></td>
         </tr>
@@ -20,5 +21,5 @@
     </tbody>
   </table>
 </div>
-<%= link_to "Create Transaction", new_tran_detail_path, class: "btn btn-outline-success" %>
+<%= link_to "Create Transaction", new_tran_group_tran_detail_path, class: "btn btn-outline-success" %>
 <%= link_to "Back Index", tran_groups_path, class: "btn btn-outline-warning" %>

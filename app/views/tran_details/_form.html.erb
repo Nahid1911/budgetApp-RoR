@@ -1,5 +1,4 @@
-<%= form_with(model: tran_detail) do |form| %>
-  <% if tran_detail.errors.any? %>
+<%= form_with(model: [ @tran_group, @tran_detail], url: tran_group_tran_details_path(@tran_group, @tran_detail), local: true) do |form| %>  <% if tran_detail.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(tran_detail.errors.count, "error") %> prohibited this tran_detail from being saved:</h2>
       <ul>
@@ -24,6 +23,6 @@
   <br />
   <div>
     <%= form.submit 'Add Transaction', class: "btn btn-outline-success"%>
-    <%= link_to "Back to tran details", tran_details_path, class: "btn btn-outline-warning" %>
+    <%= link_to "Back to tran details", tran_group_tran_details_path, class: "btn btn-outline-warning" %>
   </div>
 <% end %>
