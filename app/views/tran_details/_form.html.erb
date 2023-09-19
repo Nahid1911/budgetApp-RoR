@@ -2,7 +2,6 @@
   <% if tran_detail.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(tran_detail.errors.count, "error") %> prohibited this tran_detail from being saved:</h2>
-
       <ul>
         <% tran_detail.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,23 +9,21 @@
       </ul>
     </div>
   <% end %>
-
   <div>
     <%= form.label :itemDetails, style: "display: block" %>
     <%= form.text_field :itemDetails %>
   </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
   <div>
     <%= form.label :amount, style: "display: block" %>
     <%= form.text_field :amount %>
   </div>
-
   <div>
-    <%= form.submit %>
+    <%= form.label :tran_groups_id, style: "display: block" %>
+    <%= form.collection_select :tran_groups_id, @available_groups, :id, :groupName, prompt: "Select a Group" %>
+  </div>
+  <br />
+  <div>
+    <%= form.submit 'Add Transaction', class: "btn btn-outline-success"%>
+    <%= link_to "Back to tran details", tran_details_path, class: "btn btn-outline-warning" %>
   </div>
 <% end %>

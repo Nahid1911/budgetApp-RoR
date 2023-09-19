@@ -13,6 +13,7 @@ class TranDetailsController < ApplicationController
   # GET /tran_details/new
   def new
     @tran_detail = TranDetail.new
+    @available_groups = TranGroup.all
   end
 
   # GET /tran_details/1/edit
@@ -22,6 +23,8 @@ class TranDetailsController < ApplicationController
   # POST /tran_details or /tran_details.json
   def create
     @tran_detail = TranDetail.new(tran_detail_params)
+    @tran_detail.author = current_user
+    @available_groups = TranGroup.all
 
     respond_to do |format|
       if @tran_detail.save
@@ -65,6 +68,6 @@ class TranDetailsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tran_detail_params
-      params.require(:tran_detail).permit(:itemDetails, :user_id, :amount)
+      params.require(:tran_detail).permit(:itemDetails, :author_id, :amount, :tran_groups_id)
     end
 end

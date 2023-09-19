@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_18_151839) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_19_090656) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,11 +46,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_18_151839) do
     t.datetime "remember_created_at"
     t.datetime "last_sign_in_at"
     t.string "last_sign_in_ip"
+    t.bigint "tran_group_id"
+    t.bigint "tran_detail_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["tran_detail_id"], name: "index_users_on_tran_detail_id"
+    t.index ["tran_group_id"], name: "index_users_on_tran_group_id"
   end
 
   add_foreign_key "tran_details", "tran_groups", column: "tran_groups_id"
   add_foreign_key "tran_details", "users", column: "author_id"
   add_foreign_key "tran_groups", "users"
+  add_foreign_key "users", "tran_details"
+  add_foreign_key "users", "tran_groups"
 end

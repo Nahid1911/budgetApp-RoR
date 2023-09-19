@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
-<h1>Tran groups</h1>
+<h1>TRANSACTIONS</h1>
 <div id="tran_groups">
   <% @tran_groups.each do |tran_group| %>
     <%= render tran_group %>
   <% end %>
 </div>
-<%= link_to "New tran group", new_tran_group_path(current_user), class: "btn btn-outline-primary" %>
+<%= link_to "Add New Group", new_tran_group_path(current_user), class: "btn btn-outline-success" %>
