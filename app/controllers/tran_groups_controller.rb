@@ -1,5 +1,5 @@
 class TranGroupsController < ApplicationController
-  before_action :set_tran_group, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /tran_groups or /tran_groups.json
   def index
@@ -26,7 +26,7 @@ class TranGroupsController < ApplicationController
 
     respond_to do |format|
       if @tran_group.save
-        format.html { redirect_to tran_group_url(@tran_group), notice: "Tran group was successfully created." }
+        format.html { redirect_to tran_groups_path(@tran_group), notice: "Tran group was successfully created." }
         format.json { render :show, status: :created, location: @tran_group }
       else
         format.html { render :new, status: :unprocessable_entity }

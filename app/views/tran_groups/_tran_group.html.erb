@@ -1,18 +1,22 @@
 <div id="<%= dom_id tran_group %>">
-  <p>
-    <strong>User:</strong>
-    <%= tran_group.user_id %>
-  </p>
-  <p>
-    <strong>Groupname:</strong>
-    <%= tran_group.groupName %>
-  </p>
-  <p>
-    <strong>Icon:</strong>
-    <%= raw tran_group.icon %>
-  </p>
-  <p>
-    <strong>Amount:</strong>
-    <%= tran_group.amount %>
-  </p>
+  <a style="text-decoration: none"href="<%= tran_details_path(current_user) %>">
+    <div class="card mb-3" style="max-width: 940px;">
+      <div class="row g-0">
+        <div class="col-md-2 p-4">
+          <%= raw tran_group.icon %>
+        </div>
+        <div class="col-md-4">
+          <div class="card-body">
+            <h2> <%= tran_group.groupName %></h2>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-body">
+            <%= "group total amount need to link here" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
 </div>

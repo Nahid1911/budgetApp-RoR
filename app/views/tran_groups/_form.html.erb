@@ -15,13 +15,14 @@
   </div>
   <div>
     <%= form.label :icon, style: "display: block" %>
-    <%= form.select :icon, options_for_select([
-      ['Select and icon', ''],
-      ['Icon-1', 'fa-icon-1']
-    ]) %>
+    <%= raw "<select name='tran_group[icon]' id='tran_group_icon'>" %>
+    <%= raw "<option value=''>Select an icon</option>" %>
+    <%= raw "<option value='&#xf886;'>&#xf886;</option>" %>
+    <%= raw "</select>" %>
   </div>
   <br />
   <div>
-    <%= form.submit "Create Group" %>
+    <%= form.submit "Create Group", class: "btn btn-outline-success"%>
+    <%= link_to "Back Index", tran_groups_path, class: "btn btn-outline-warning" %>
   </div>
 <% end %>
