@@ -3,7 +3,7 @@ class TranGroupsController < ApplicationController
 
   # GET /tran_groups or /tran_groups.json
   def index
-    @tran_groups = TranGroup.all
+    @tran_groups = TranGroup.where(user_id: current_user.id)
   end
 
   # GET /tran_groups/1 or /tran_groups/1.json
