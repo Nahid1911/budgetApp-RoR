@@ -4,6 +4,7 @@ class TranDetailsController < ApplicationController
   # GET /tran_details or /tran_details.json
   def index
     @tran_details = TranDetail.all
+    @tran_summary = TranDetail.all
   end
 
   # GET /tran_details/1 or /tran_details/1.json
@@ -28,7 +29,7 @@ class TranDetailsController < ApplicationController
 
     respond_to do |format|
       if @tran_detail.save
-        format.html { redirect_to tran_detail_url(@tran_detail), notice: "Tran detail was successfully created." }
+        format.html { redirect_to tran_details_path(@tran_detail), notice: "Tran detail was successfully created." }
         format.json { render :show, status: :created, location: @tran_detail }
       else
         format.html { render :new, status: :unprocessable_entity }

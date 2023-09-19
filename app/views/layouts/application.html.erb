@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RecipeAppRor</title>
+  <title>Budget App</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <body>
-  <%=render 'layouts/navbar'%>
-  <div class ="container">
+  <div class ="container justify-content-center" style="max-width: 700px">
+    <%=render 'layouts/navbar'%>
     <% if notice.present? %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
