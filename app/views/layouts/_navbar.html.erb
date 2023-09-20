@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light ps-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-light ps-4 d-flex justify-content-between" style="font-size:35px">
   <div class="navbar" id="navbarNav">
     <ul class="nav nav-tabs">
       <% if user_signed_in? %>
         <li>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-          </svg>
+          <%=link_to "/" do%>
+            <i class="bi bi-caret-left-fill" style="font-size: 2rem; color: cornflowerblue;"></i>
+          <%end%>
         </li>
         <li class="nav-item">
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class: 'nav-link' %>
@@ -20,10 +20,14 @@
       <%end%>
     </ul>
   </div>
-  <div class="navbar" id="navbarNav">
-    <% if current_user.present? %>
-      <strong><%= 'User Name: ' %></strong>
-      <%= current_user.name %>
-    <% end %>
+  <div class="navbar" style="color:primary" id="navbarNav">
+    <ul class="nav nav-tabs">
+      <% if current_user.present? %>
+        <li class="nav-item">
+          <strong><%= 'User Name: ' %></strong>
+          <%= current_user.name %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>

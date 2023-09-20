@@ -1,5 +1,5 @@
 <p style="color: green"></p>
-<h1>GROUP SUMMARY</h1>
+<h1>GROUP TRANSACTIONS</h1>
 <h4 style="color:skyblue">Group Total : <%= @total_value %></h4>
 <div id="tran_details">
   <table class="table table-hover">
@@ -13,7 +13,7 @@
     <tbody>
       <% @tran_details.each do |tran|%>
         <tr>
-          <td scope="row"><%= 0 %></td>
+          <td scope="row"><%= tran.created_at.strftime('%d-%m-%y')%></td>
           <td scope="row"><%= tran.itemDetails %></td>
           <td scope="row"><%= tran.amount %></td>
         </tr>
