@@ -11,9 +11,10 @@
             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
           </div>
         </div>
+        <% @total_value = TranDetail.where(author_id: current_user, tran_groups_id: tran_group.id).sum(:amount)%>
         <div class="col-md-4">
           <div class="card-body">
-            <%= "group total amount need to link here" %>
+            <strong>Group Total: <%= @total_value %></strong>
           </div>
         </div>
       </div>
