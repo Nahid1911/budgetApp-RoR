@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class TranDetailTest < ActiveSupport::TestCase
   # test "the truth" do

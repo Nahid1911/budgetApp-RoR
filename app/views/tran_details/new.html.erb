@@ -1,2 +1,4 @@
-<h1>CREATE TRANSACTION</h1>
+<h2>CREATE TRANSACTION</h2>
+<% @group_name = TranGroup.find(params[:tran_group_id]) %>
+<h5><strong>Group Name: </strong> <%= @group_name.groupName %></h5>
 <%= render "form", tran_detail: @tran_detail %>

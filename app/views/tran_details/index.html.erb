@@ -1,6 +1,8 @@
 <p style="color: green"></p>
-<h1>GROUP TRANSACTIONS</h1>
-<h4 style="color:skyblue">Group Total : <%= @total_value %></h4>
+<h2>GROUP TRANSACTIONS</h2>
+<% @group_name = TranGroup.find(params[:tran_group_id]) %>
+<h5><strong>Group Name: </strong> <%= @group_name.groupName %></h5>
+<h5 style="color:skyblue"><strong>Group Total :</strong> <%= @total_value %></h5>
 <div id="tran_details">
   <table class="table table-hover">
     <thead>
