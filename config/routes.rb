@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'splash#show'
   devise_for :users
   resources :users
   resources :tran_groups do
@@ -8,5 +9,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'tran_groups#index'
 end
