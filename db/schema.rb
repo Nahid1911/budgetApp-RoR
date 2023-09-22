@@ -17,7 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_090656) do
   create_table "tran_details", force: :cascade do |t|
     t.string "itemDetails"
     t.bigint "author_id", null: false
-    t.bigint "tran_groups_id", null: false
+    t.bigint "tran_groups_id"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

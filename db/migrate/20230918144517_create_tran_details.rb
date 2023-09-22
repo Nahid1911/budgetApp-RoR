@@ -3,7 +3,7 @@ class CreateTranDetails < ActiveRecord::Migration[7.0]
     create_table :tran_details do |t|
       t.string :itemDetails
       t.references :user, null: false, foreign_key: true
-      t.references :tran_groups, null: false, foreign_key: true
+      t.references :tran_group, null: true, foreign_key: true
       t.float :amount
 
       t.timestamps

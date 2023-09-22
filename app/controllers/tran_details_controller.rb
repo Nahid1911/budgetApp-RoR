@@ -13,9 +13,6 @@ class TranDetailsController < ApplicationController
     end
   end
 
-  # GET /tran_details/1 or /tran_details/1.json
-  def show; end
-
   # GET /tran_details/new
   def new
     @tran_detail = TranDetail.new
@@ -23,9 +20,6 @@ class TranDetailsController < ApplicationController
     @tran_group = TranGroup.find(params[:tran_group_id]) # Load the parent TranGroup
     @tran_detail = @tran_group.tran_details.build
   end
-
-  # GET /tran_details/1/edit
-  def edit; end
 
   # POST /tran_details or /tran_details.json
   def create
@@ -43,29 +37,6 @@ class TranDetailsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @tran_detail.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /tran_details/1 or /tran_details/1.json
-  def update
-    respond_to do |format|
-      if @tran_detail.update(tran_detail_params)
-        format.html { redirect_to tran_detail_url(@tran_detail), notice: 'Tran detail was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tran_detail }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @tran_detail.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /tran_details/1 or /tran_details/1.json
-  def destroy
-    @tran_detail.destroy
-
-    respond_to do |format|
-      format.html { redirect_to tran_details_url, notice: 'Tran detail was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
