@@ -1,0 +1,10 @@
+<p style="color: green"></p>
+
+<%= render @tran_detail %>
+
+<div>
+  <%= link_to "Edit this tran detail", edit_tran_detail_path(@tran_detail) %> |
+  <%= link_to "Back to tran details", tran_details_path %>
+
+  <%= button_to "Destroy this tran detail", @tran_detail, method: :delete %>
+</div>
