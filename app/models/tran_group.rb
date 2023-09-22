@@ -4,4 +4,5 @@ class TranGroup < ApplicationRecord
 
   validates :groupName, presence: true
   validates :user, presence: true
+  validates :icon, presence: true
 end

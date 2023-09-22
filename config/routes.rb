@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'splash#show'
   devise_for :users
-  resources :users
-  resources :tran_groups do
+  resources :users, only: [:index, :show, :new, :create]
+  resources :tran_groups, only: [:index, :show, :new, :create] do
   resources :tran_details, only: [:index, :show, :new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

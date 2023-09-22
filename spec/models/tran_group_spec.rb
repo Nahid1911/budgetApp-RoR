@@ -36,7 +36,7 @@ RSpec.describe TranGroup, type: :model do
       expect(tran_group).to_not be_valid
     end
 
-    it 'is valid without an icon' do
+    it 'is not valid without an icon' do
       user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
       tran_group = TranGroup.new(
         user:,
@@ -44,7 +44,7 @@ RSpec.describe TranGroup, type: :model do
         amount: 100.0
       )
 
-      expect(tran_group).to be_valid
+      expect(tran_group).not_to be_valid
     end
 
     it 'is valid without an amount' do
