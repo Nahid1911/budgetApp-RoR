@@ -59,7 +59,7 @@ Key features of the application.
 
 - [Live Demo Link](https://expensetracker-1ayx.onrender.com/)
 
-- [Project Walkthrough](https://www.loom.com/share/c17e3783d8ab4e2f9efb6db4f1e07afb)
+- [Project Walkthrough](https://www.loom.com/share/71bcedbd61bf47c0ac8a3a28ac17b170?sid=39a6d189-ee0e-4922-9321-8c7d2d5563a1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
