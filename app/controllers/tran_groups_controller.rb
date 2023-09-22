@@ -11,7 +11,6 @@ class TranGroupsController < ApplicationController
     @tran_group = TranGroup.new
   end
 
-
   # POST /tran_groups or /tran_groups.json
   def create
     @tran_group = TranGroup.new(tran_group_params)

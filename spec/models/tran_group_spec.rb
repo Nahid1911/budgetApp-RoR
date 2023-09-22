@@ -6,7 +6,7 @@ RSpec.describe TranGroup, type: :model do
       # Create a valid User and TranGroup instance
       user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
       tran_group = TranGroup.new(
-        user: user,
+        user:,
         groupName: 'Sample Group',
         icon: 'group-icon.png',
         amount: 100.0
@@ -28,7 +28,7 @@ RSpec.describe TranGroup, type: :model do
     it 'is not valid without a group name' do
       user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
       tran_group = TranGroup.new(
-        user: user,
+        user:,
         icon: 'group-icon.png',
         amount: 100.0
       )
@@ -39,7 +39,7 @@ RSpec.describe TranGroup, type: :model do
     it 'is valid without an icon' do
       user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
       tran_group = TranGroup.new(
-        user: user,
+        user:,
         groupName: 'Sample Group',
         amount: 100.0
       )
@@ -50,7 +50,7 @@ RSpec.describe TranGroup, type: :model do
     it 'is valid without an amount' do
       user = User.create(name: 'John Doe', email: 'john@example.com', password: 'password')
       tran_group = TranGroup.new(
-        user: user,
+        user:,
         groupName: 'Sample Group',
         icon: 'group-icon.png'
       )

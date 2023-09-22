@@ -1,4 +1,4 @@
-<h1>Budget App</h1>
+<h1>Expence Tracker App</h1>
 
 <a name="readme-top"></a>
 
@@ -10,6 +10,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -23,7 +24,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Budget App <a name="about-project"></a>
+# 📖 Expence Tracker App <a name="about-project"></a>
 
 This is a mobile web application where you can manage your expenses: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
@@ -34,6 +35,7 @@ This is a mobile web application where you can manage your expenses: you have a 
 - <a href="https://www.postgresql.org/">PostgreSQL</a>
 - <a href="https://rubyonrails.org/">Ruby on Rails</a>
 - <a href="https://rubygems.org/gems/devise/versions/4.9.2?locale=en">Devise Gem</a>
+- <a href="https://getbootstrap.com/">BootStrap</a>
 
 <!-- Features -->
 
@@ -46,6 +48,18 @@ Key features of the application.
 - **Expense Details Page**
 - **Expense Group Creation page**
 - **Expense recording page**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+> Add a link to your deployed project.
+
+- [Live Demo Link](https://expensetracker-1ayx.onrender.com/)
+
+- [Project Walkthrough](https://www.loom.com/share/c17e3783d8ab4e2f9efb6db4f1e07afb)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -62,6 +76,7 @@ In order to run this project you need:
 - PostgreSQL.
 - Code Editor.
 - Ruby On Rails.
+- BoodStrap
 
 ### Setup
 

@@ -1,4 +1,3 @@
-
 class SplashController < ApplicationController
   def show
     if user_signed_in?
