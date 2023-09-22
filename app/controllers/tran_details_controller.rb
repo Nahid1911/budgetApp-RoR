@@ -4,8 +4,8 @@ class TranDetailsController < ApplicationController
   # GET /tran_details or /tran_details.json
   def index
     if params[:tran_group_id]
-      filtered_tran_details = TranDetail.where(author_id: current_user, tran_groups_id: params[:tran_group_id])
-      @total_value = TranDetail.where(author_id: current_user, tran_groups_id: params[:tran_group_id]).sum(:amount)
+      filtered_tran_details = TranDetail.where(author_id: current_user, tran_group_id: params[:tran_group_id])
+      @total_value = TranDetail.where(author_id: current_user, tran_group_id: params[:tran_group_id]).sum(:amount)
       @tran_details = filtered_tran_details.to_a
     elsif params[:user_id]
       @user = User.find(params[:user_id])
@@ -49,6 +49,6 @@ class TranDetailsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def tran_detail_params
-    params.require(:tran_detail).permit(:itemDetails, :author_id, :amount, :tran_groups_id)
+    params.require(:tran_detail).permit(:itemDetails, :author_id, :amount, :tran_group_id)
   end
 end

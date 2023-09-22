@@ -17,12 +17,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_090656) do
   create_table "tran_details", force: :cascade do |t|
     t.string "itemDetails"
     t.bigint "author_id", null: false
-    t.bigint "tran_groups_id"
+    t.bigint "tran_group_id"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_tran_details_on_author_id"
-    t.index ["tran_groups_id"], name: "index_tran_details_on_tran_groups_id"
+    t.index ["tran_group_id"], name: "index_tran_details_on_tran_group_id"
   end
 
   create_table "tran_groups", force: :cascade do |t|
@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_090656) do
     t.index ["tran_group_id"], name: "index_users_on_tran_group_id"
   end
 
-  add_foreign_key "tran_details", "tran_groups", column: "tran_groups_id"
+  add_foreign_key "tran_details", "tran_groups"
   add_foreign_key "tran_details", "users", column: "author_id"
   add_foreign_key "tran_groups", "users"
   add_foreign_key "users", "tran_details"
