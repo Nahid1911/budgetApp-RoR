@@ -10,7 +10,7 @@
             <h3> <%= tran_group.groupName %></h3>
           </div>
         </div>
-        <% @total_value = TranDetail.where(author_id: current_user, tran_groups_id: tran_group.id).sum(:amount)%>
+        <% @total_value = TranDetail.where(author_id: current_user, tran_group_id: tran_group.id).sum(:amount)%>
         <div class="col-md-4 d-flex justify-content-center align-items-center">
           <div class="card-body">
             <strong>Group Total: <%= @total_value %></strong>
