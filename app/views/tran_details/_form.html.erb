@@ -17,8 +17,8 @@
     <%= form.text_field :amount %>
   </div>
   <div>
-    <%= form.label :tran_groups_id, style: "display: block" %>
-    <%= form.collection_select :tran_groups_id, @available_groups, :id, :groupName, prompt: "Select a Group" %>
+    <%= form.label :tran_group_id, style: "display: block" %>
+    <%= form.collection_select :tran_group_id, @available_groups, :id, :groupName, prompt: "Select a Group" %>
   </div>
   <br />
   <div>
